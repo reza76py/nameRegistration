@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    {% block content %}
+
+    <form method="POST">{% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Insert</button>
+
+    </form>
+    
+    {% for item in query %}
+    <ul>
+        <li>{{ item.name }} {{ item.lastname }}: {{ item.description }}</li>  <!-- Display the new field -->
+    </ul>
+    {% endfor %}
+        
+    
+    {% endblock content %}
+</body>
+</html>
